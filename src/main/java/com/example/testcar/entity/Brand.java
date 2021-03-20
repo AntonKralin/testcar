@@ -1,25 +1,34 @@
 package com.example.testcar.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Brand {
-	private int		brand;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int		id;
 	private String 	name;
 	
 	public Brand() {
 		
 	}
 
-	public Brand(int brand, String name) {
+	public Brand(int id, String name) {
 		super();
-		this.brand = brand;
+		this.id = id;
 		this.name = name;
 	}
 
-	public int getBrand() {
-		return brand;
+	public int getId() {
+		return id;
 	}
 
-	public void setBrand(int brand) {
-		this.brand = brand;
+	public void setId(int brand) {
+		this.id = brand;
 	}
 
 	public String getName() {
@@ -32,7 +41,7 @@ public class Brand {
 	
 	@Override
 	public String toString() {
-		return "{'brand':'" + brand + "','name':'" + name + "'}";
+		return "{'brand':'" + id + "','name':'" + name + "'}";
 	}
 	
 }
