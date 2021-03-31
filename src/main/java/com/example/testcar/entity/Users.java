@@ -1,9 +1,12 @@
 package com.example.testcar.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Users {
@@ -15,13 +18,15 @@ public class Users {
 	private String	password;
 	private String	type;
 	
+	@OneToMany
+	private List<Ads> ads;
+	
 	public Users() {
 		
 	}
 
-	public Users(int id, String login, String password, String type) {
+	public Users( String login, String password, String type) {
 		super();
-		this.id = id;
 		this.login = login;
 		this.password = password;
 		this.type = type;
@@ -59,6 +64,14 @@ public class Users {
 		this.type = type;
 	}
 	
+	public List<Ads> getAds() {
+		return ads;
+	}
+
+	public void setAds(List<Ads> ads) {
+		this.ads = ads;
+	}
+
 	@Override
 	public String toString() {
 		return "{'id':'" + id + "','login':'" + login + "','password':'"

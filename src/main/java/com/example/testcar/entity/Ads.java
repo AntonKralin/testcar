@@ -34,10 +34,9 @@ public class Ads {
 		
 	}
 
-	public Ads(int id, String model, String body, String transmission, int miliage, int year, int price, int isdelete,
+	public Ads(String model, String body, String transmission, int miliage, int year, int price, int isdelete,
 			Users user, Brand brand) {
 		super();
-		this.id = id;
 		this.model = model;
 		this.body = body;
 		this.transmission = transmission;
